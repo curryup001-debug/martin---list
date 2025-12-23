@@ -14,7 +14,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/80 backdrop-blur-md">
-      <div className="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300 max-h-[85vh] overflow-y-auto flex flex-col">
+      <div className="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300 max-h-[85vh] overflow-y-auto">
         {/* Status Header */}
         <div className={`p-10 text-center text-white shrink-0 ${isConcerned ? 'bg-[#EF4444]' : 'bg-[#10B981]'}`}>
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-6 shadow-sm">
@@ -29,12 +29,12 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
             )}
           </div>
           <h3 className="text-4xl font-black mb-2 tracking-wide">
-            {isConcerned ? `警報：勾選了 ${count} 項！` : `狀況：勾選了 ${count} 項`}
+            {isConcerned ? `檢測結果：勾選了 ${count} 項！` : `目前狀況：勾選了 ${count} 項`}
           </h3>
           <p className="text-xl opacity-90 font-medium">請看下方的分析報告</p>
         </div>
 
-        <div className="p-8 md:p-12 overflow-y-auto">
+        <div className="p-8 md:p-12">
           {/* Main Title */}
           <div className="text-center mb-8">
             <p className="text-2xl font-bold text-slate-700">
@@ -69,14 +69,17 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
               href={WEBINAR_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-center w-full py-4 px-6 bg-[#F97316] hover:bg-[#EA580C] text-white rounded-2xl font-black transition-all hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-5px_rgba(249,115,22,0.4)] overflow-hidden"
+              className="group relative flex flex-col items-center justify-center w-full py-6 px-4 bg-[#F97316] hover:bg-[#EA580C] text-white rounded-2xl font-black transition-all hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-5px_rgba(249,115,22,0.4)] overflow-hidden"
             >
-              <div className="flex items-center gap-3 whitespace-nowrap overflow-hidden">
+              <span className="text-sm md:text-base font-medium mb-1 opacity-95">馬丁藥師會在講座中，教你怎麼調整</span>
+              <span className="text-sm md:text-base font-bold text-[#FFD700] mb-3 animate-pulse">📢 再偷偷告訴你：講座還有 驚喜小禮物🎁</span>
+
+              <div className="flex items-center gap-2 whitespace-nowrap">
                 <svg className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
                 </svg>
                 <span className="text-lg md:text-2xl tracking-tight">
-                  立即報名「免費直播」改善吸收難題
+                  👉 點我進社群，講座當天直接提醒你
                 </span>
               </div>
               {/* Shine effect */}

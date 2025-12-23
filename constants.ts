@@ -1,7 +1,7 @@
 
 import { ChecklistCategory } from './types';
 
-export const WEBINAR_URL = 'https://tsi.st/Martin/L1';
+export const WEBINAR_URL = 'https://line.me/ti/g2/PBZiwOFZ6jKrIgQ7rZF1tBV2ky9v9q27RGNMFA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default';
 
 // 修正後的圖床直接連結 (加上 i. 前綴與 .png 結尾)
 export const MARTIN_AVATAR_URL = 'https://i.meee.com.tw/9FdALzx.jpg';
