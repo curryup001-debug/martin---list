@@ -27,17 +27,13 @@ const App: React.FC = () => {
   const handleAnalyze = async () => {
     setIsResultOpen(true);
     setIsLoadingAdvice(true);
+    setAdvice(null); // 重置之前的建議
     
-    const selectedTexts: string[] = [];
-    CHECKLIST_DATA.forEach(cat => {
-      cat.items.forEach(item => {
-        if (selections[item.id]) {
-          selectedTexts.push(item.text);
-        }
-      });
-    });
+    // 收集選中的 ID
+    const selectedIds = Object.keys(selections).filter(id => selections[id]);
 
-    const result = await getMartinAdvice(selectedTexts);
+    // 呼叫本地模擬分析服務 (內含延遲)
+    const result = await getMartinAdvice(selectedIds);
     setAdvice(result);
     setIsLoadingAdvice(false);
   };

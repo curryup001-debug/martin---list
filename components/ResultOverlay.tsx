@@ -40,8 +40,8 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
             <p className="text-2xl font-bold text-slate-700">
               您的孩子很有可能是
             </p>
-            <h4 className="text-3xl md:text-4xl font-black text-[#EF4444] mt-2 mb-2">
-              「脾胃吸收力卡關」 <span className="text-slate-700 text-2xl font-bold">的狀態！</span>
+            <h4 className={`text-3xl md:text-4xl font-black mt-2 mb-2 ${isConcerned ? 'text-[#EF4444]' : 'text-[#10B981]'}`}>
+              {isConcerned ? '「脾胃吸收力卡關」' : '「吸收力尚算穩定」'} <span className="text-slate-700 text-2xl font-bold">的狀態！</span>
             </h4>
           </div>
 
@@ -54,11 +54,11 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
             {loading ? (
               <div className="flex flex-col items-center py-6">
                 <div className="w-8 h-8 border-4 border-orange-200 border-t-orange-500 rounded-full animate-spin mb-3"></div>
-                <p className="text-orange-700 text-sm font-medium">馬丁藥師正在診斷中...</p>
+                <p className="text-orange-700 text-sm font-medium">馬丁藥師正在詳細診斷中...</p>
               </div>
             ) : (
-              <div className="text-slate-700 leading-relaxed text-lg whitespace-pre-line">
-                {advice || '這代表孩子的脾胃正處於「運化無力」的狀態。這時候如果不明原因補充，反而會造成身體負擔。建議您參加直播了解正確的調理順序。'}
+              <div className="text-slate-700 leading-relaxed text-lg whitespace-pre-line italic">
+                {advice || '分析生成失敗，請返回重新測量。'}
               </div>
             )}
           </div>
