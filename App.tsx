@@ -28,7 +28,7 @@ const App: React.FC = () => {
     setIsResultOpen(true);
     setIsLoadingAdvice(true);
     setAdvice(null); // 重置之前的建議
-    
+
     // 收集選中的 ID
     const selectedIds = Object.keys(selections).filter(id => selections[id]);
 
@@ -41,12 +41,12 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       <main className="max-w-4xl mx-auto px-4 pb-32">
-        <ChecklistSection 
-          data={CHECKLIST_DATA} 
-          selections={selections} 
-          onToggle={toggleItem} 
+        <ChecklistSection
+          data={CHECKLIST_DATA}
+          selections={selections}
+          onToggle={toggleItem}
         />
       </main>
 
@@ -55,7 +55,7 @@ const App: React.FC = () => {
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
           <div className="hidden sm:block">
             <p className="text-slate-400 text-xs uppercase tracking-widest font-bold mb-0.5">當前狀態</p>
-            <p className="text-[#044E3B] font-black text-lg">
+            <p className="text-[#EA580C] font-black text-lg">
               已勾選 {selectedCount} 項
             </p>
           </div>
@@ -63,8 +63,8 @@ const App: React.FC = () => {
             onClick={handleAnalyze}
             disabled={selectedCount === 0}
             className={`flex-1 sm:flex-none sm:min-w-[280px] py-4 rounded-2xl font-black text-xl transition-all shadow-xl
-              ${selectedCount > 0 
-                ? 'bg-[#044E3B] text-white hover:bg-[#065F46] active:scale-95 shadow-emerald-100' 
+              ${selectedCount > 0
+                ? 'bg-[#EA580C] text-white hover:bg-[#C2410C] active:scale-95 shadow-orange-200'
                 : 'bg-slate-100 text-slate-400 cursor-not-allowed'}
             `}
           >
@@ -74,7 +74,7 @@ const App: React.FC = () => {
       </footer>
 
       {isResultOpen && (
-        <ResultOverlay 
+        <ResultOverlay
           count={selectedCount}
           advice={advice}
           loading={isLoadingAdvice}

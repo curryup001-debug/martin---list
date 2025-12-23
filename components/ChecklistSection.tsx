@@ -19,12 +19,12 @@ const ChecklistSection: React.FC<Props> = ({ data, selections, onToggle }) => {
           </div>
           <div className="p-8 grid gap-4">
             {category.items.map((item) => (
-              <label 
-                key={item.id} 
+              <label
+                key={item.id}
                 className={`flex items-start gap-5 p-6 rounded-2xl border-2 transition-all cursor-pointer group
-                  ${selections[item.id] 
-                    ? 'border-[#044E3B] bg-emerald-50/30' 
-                    : 'border-slate-100 hover:border-emerald-200 hover:bg-slate-50/50'}
+                  ${selections[item.id]
+                    ? 'border-[#EA580C] bg-orange-50/50'
+                    : 'border-slate-100 hover:border-orange-200 hover:bg-slate-50/50'}
                 `}
               >
                 <div className="relative flex items-center mt-1">
@@ -35,7 +35,7 @@ const ChecklistSection: React.FC<Props> = ({ data, selections, onToggle }) => {
                     onChange={() => onToggle(item.id)}
                   />
                   <div className={`w-7 h-7 rounded-lg border-2 flex items-center justify-center transition-all duration-300
-                    ${selections[item.id] ? 'bg-[#044E3B] border-[#044E3B] rotate-0 scale-100' : 'bg-white border-slate-300 -rotate-12 scale-90 group-hover:scale-100'}
+                    ${selections[item.id] ? 'bg-[#EA580C] border-[#EA580C] rotate-0 scale-100' : 'bg-white border-slate-300 -rotate-12 scale-90 group-hover:scale-100'}
                   `}>
                     {selections[item.id] && (
                       <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -44,7 +44,7 @@ const ChecklistSection: React.FC<Props> = ({ data, selections, onToggle }) => {
                     )}
                   </div>
                 </div>
-                <span className={`text-lg leading-snug select-none flex-1 ${selections[item.id] ? 'text-[#044E3B] font-bold' : 'text-slate-600'}`}>
+                <span className={`text-lg leading-snug select-none flex-1 ${selections[item.id] ? 'text-[#EA580C] font-bold' : 'text-slate-600'}`}>
                   {item.text}
                 </span>
               </label>

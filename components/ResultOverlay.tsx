@@ -14,9 +14,9 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/80 backdrop-blur-md">
-      <div className="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300">
+      <div className="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300 max-h-[85vh] overflow-y-auto flex flex-col">
         {/* Status Header */}
-        <div className={`p-10 text-center text-white ${isConcerned ? 'bg-[#EF4444]' : 'bg-[#10B981]'}`}>
+        <div className={`p-10 text-center text-white shrink-0 ${isConcerned ? 'bg-[#EF4444]' : 'bg-[#10B981]'}`}>
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-6 shadow-sm">
             {isConcerned ? (
               <svg className="w-10 h-10 text-[#EF4444]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -33,8 +33,8 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
           </h3>
           <p className="text-xl opacity-90 font-medium">請看下方的分析報告</p>
         </div>
-        
-        <div className="p-8 md:p-12">
+
+        <div className="p-8 md:p-12 overflow-y-auto">
           {/* Main Title */}
           <div className="text-center mb-8">
             <p className="text-2xl font-bold text-slate-700">
@@ -48,8 +48,8 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
           {/* Advice Box */}
           <div className="bg-orange-50 border border-orange-100 rounded-3xl p-6 md:p-8 mb-10 relative">
             <div className="flex items-center gap-2 mb-4">
-               <span className="text-2xl">💡</span>
-               <p className="font-bold text-[#92400E] text-xl">馬丁藥師建議：</p>
+              <span className="text-2xl">💡</span>
+              <p className="font-bold text-[#92400E] text-xl">馬丁藥師建議：</p>
             </div>
             {loading ? (
               <div className="flex flex-col items-center py-6">
@@ -65,7 +65,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
 
           {/* CTA Section */}
           <div className="space-y-6 text-center">
-            <a 
+            <a
               href={WEBINAR_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -73,7 +73,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
             >
               <div className="flex items-center gap-3 whitespace-nowrap overflow-hidden">
                 <svg className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                   <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
+                  <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
                 </svg>
                 <span className="text-lg md:text-2xl tracking-tight">
                   立即報名「免費直播」改善吸收難題
@@ -82,12 +82,12 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
               {/* Shine effect */}
               <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-20 group-hover:animate-shine transition-all duration-700" />
             </a>
-            
+
             <p className="text-slate-400 text-sm font-medium">
               *直播名額有限，建議家長儘早卡位。
             </p>
 
-            <button 
+            <button
               onClick={onClose}
               className="text-slate-400 text-sm font-medium hover:text-slate-600 transition-colors"
             >
