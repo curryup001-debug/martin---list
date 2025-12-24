@@ -53,7 +53,7 @@ const App: React.FC = () => {
       {/* Persistent CTA Bar */}
       <footer className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-xl border-t border-slate-100 p-4 z-40">
         <div className="max-w-4xl mx-auto flex items-center justify-between gap-4">
-          <div className="hidden sm:block">
+          <div className="flex flex-col sm:block items-center sm:items-start order-2 sm:order-1">
             <p className="text-slate-400 text-xs uppercase tracking-widest font-bold mb-0.5">當前狀態</p>
             <p className="text-[#EA580C] font-black text-lg">
               已勾選 <span key={selectedCount} className="inline-block animate-pop">{selectedCount}</span> 項

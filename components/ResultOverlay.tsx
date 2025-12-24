@@ -16,22 +16,23 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/80 backdrop-blur-md">
       <div className="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300 max-h-[85vh] overflow-y-auto">
         {/* Status Header */}
-        <div className={`p-10 text-center text-white shrink-0 animate-slide-up-fade ${isConcerned ? 'bg-[#EF4444]' : 'bg-[#10B981]'}`} style={{ animationDelay: '0.1s' }}>
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-6 shadow-sm">
-            {isConcerned ? (
-              <svg className="w-10 h-10 text-[#EF4444]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-10 h-10 text-[#10B981]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-              </svg>
-            )}
+        {/* Status Header - Clean Style */}
+        <div className={`p-10 text-center shrink-0 animate-slide-up-fade relative overflow-hidden`} style={{ animationDelay: '0.1s' }}>
+          {/* Top colored line */}
+          <div className={`absolute top-0 left-0 right-0 h-3 ${isConcerned ? 'bg-gradient-to-r from-red-400 to-orange-400' : 'bg-gradient-to-r from-emerald-400 to-teal-400'}`}></div>
+
+          <div className="mb-6">
+            <div className={`inline-flex items-center justify-center w-24 h-24 rounded-full text-6xl shadow-sm border-4 ${isConcerned ? 'bg-red-50 border-red-100' : 'bg-emerald-50 border-emerald-100'} animate-bounce`}>
+              {isConcerned ? '🧐' : '🥳'}
+            </div>
           </div>
-          <h3 className="text-4xl font-black mb-2 tracking-wide">
-            {isConcerned ? `檢測結果：勾選了 ${count} 項！` : `目前狀況：勾選了 ${count} 項`}
+
+          <h3 className={`text-4xl font-black mb-2 tracking-wide ${isConcerned ? 'text-slate-800' : 'text-slate-800'}`}>
+            {isConcerned ? `檢測結果：勾選了 ${count} 項` : `目前狀況：勾選了 ${count} 項`}
           </h3>
-          <p className="text-xl opacity-90 font-medium">請看下方的分析報告</p>
+          <p className="text-xl text-slate-500 font-medium">
+            {isConcerned ? '馬丁藥師有些建議想給您...' : '看起來維持得不錯喔！'}
+          </p>
         </div>
 
         <div className="p-8 md:p-12">
