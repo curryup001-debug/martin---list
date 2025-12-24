@@ -16,7 +16,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
     <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/80 backdrop-blur-md">
       <div className="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300 max-h-[85vh] overflow-y-auto">
         {/* Status Header */}
-        <div className={`p-10 text-center text-white shrink-0 ${isConcerned ? 'bg-[#EF4444]' : 'bg-[#10B981]'}`}>
+        <div className={`p-10 text-center text-white shrink-0 animate-slide-up-fade ${isConcerned ? 'bg-[#EF4444]' : 'bg-[#10B981]'}`} style={{ animationDelay: '0.1s' }}>
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-full mb-6 shadow-sm">
             {isConcerned ? (
               <svg className="w-10 h-10 text-[#EF4444]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -36,7 +36,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
 
         <div className="p-8 md:p-12">
           {/* Main Title */}
-          <div className="text-center mb-8">
+          <div className="text-center mb-8 animate-slide-up-fade" style={{ animationDelay: '0.2s' }}>
             <p className="text-2xl font-bold text-slate-700">
               您的孩子很有可能是
             </p>
@@ -46,15 +46,19 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
           </div>
 
           {/* Advice Box */}
-          <div className="bg-orange-50 border border-orange-100 rounded-3xl p-6 md:p-8 mb-10 relative">
+          <div className="bg-orange-50 border border-orange-100 rounded-3xl p-6 md:p-8 mb-10 relative animate-slide-up-fade" style={{ animationDelay: '0.3s' }}>
             <div className="flex items-center gap-2 mb-4">
               <span className="text-2xl">💡</span>
               <p className="font-bold text-[#92400E] text-xl">馬丁藥師建議：</p>
             </div>
             {loading ? (
-              <div className="flex flex-col items-center py-6">
-                <div className="w-8 h-8 border-4 border-orange-200 border-t-orange-500 rounded-full animate-spin mb-3"></div>
-                <p className="text-orange-700 text-sm font-medium">馬丁藥師正在詳細診斷中...</p>
+              <div className="flex flex-col items-center py-8 relative overflow-hidden rounded-xl bg-orange-100/50">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/50 to-transparent w-full h-full animate-scan"></div>
+                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 z-10 animate-bounce">
+                  <span className="text-2xl">👨‍⚕️</span>
+                </div>
+                <p className="text-orange-800 text-lg font-bold z-10 animate-pulse">馬丁藥師正在詳細診斷中...</p>
+                <p className="text-orange-600/70 text-sm mt-1 z-10">分析各項指標數據...</p>
               </div>
             ) : (
               <div className="text-slate-700 leading-relaxed text-lg whitespace-pre-line italic">
@@ -64,7 +68,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
           </div>
 
           {/* CTA Section */}
-          <div className="space-y-6 text-center">
+          <div className="space-y-6 text-center animate-slide-up-fade" style={{ animationDelay: '0.4s' }}>
             <a
               href={WEBINAR_URL}
               target="_blank"

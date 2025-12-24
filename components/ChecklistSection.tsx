@@ -38,7 +38,7 @@ const ChecklistSection: React.FC<Props> = ({ data, selections, onToggle }) => {
                     ${selections[item.id] ? 'bg-[#EA580C] border-[#EA580C] rotate-0 scale-100' : 'bg-white border-slate-300 -rotate-12 scale-90 group-hover:scale-100'}
                   `}>
                     {selections[item.id] && (
-                      <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="w-5 h-5 text-white animate-draw" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" />
                       </svg>
                     )}

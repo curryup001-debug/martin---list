@@ -56,7 +56,7 @@ const App: React.FC = () => {
           <div className="hidden sm:block">
             <p className="text-slate-400 text-xs uppercase tracking-widest font-bold mb-0.5">當前狀態</p>
             <p className="text-[#EA580C] font-black text-lg">
-              已勾選 {selectedCount} 項
+              已勾選 <span key={selectedCount} className="inline-block animate-pop">{selectedCount}</span> 項
             </p>
           </div>
           <button
