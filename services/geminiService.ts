@@ -9,20 +9,20 @@ const ADVICE_MAPPING: Record<string, string> = {
   'stool_sticky': '大便黏馬桶代表體內「濕氣」過重，這會像一層膜一樣阻礙營養吸收。',
   'stool_shape': '便便不成形或乾硬，顯示腸道運化失調，營養還沒吸收就排出了。',
   'stool_undigested': '完穀不化是典型的脾虛表現，說明脾胃已經「罷工」，沒辦法分解食物。',
-  
+
   // 觀察「口腔」
   'oral_tongue': '舌苔厚代表體內有積食或寒濕，就像過濾網塞住，吃再好也補不進去。',
   'oral_breath': '口氣重通常是「胃火」或消化不良的信號，這會影響孩子的成長動能。',
-  'oral_sore': '容易嘴破顯示體內陰陽失衡，這類孩子通常吸收熱量的效率極低。',
-  
+  'oral_sore': '容易嘴破會影響睡眠品質，這類孩子通常睡眠品質不好。',
+
   // 觀察「體態與睡眠」
-  'body_potbelly': '四肢瘦肚子大是常見的「脾虛」體態，營養都堆在肚子變成廢物，沒去到骨頭。',
-  'body_flabby': '肉鬆鬆軟軟代表「氣血」不足以支撐肌肉生長，這是吸收轉化率低的警訊。',
+  'body_potbelly': '四肢瘦肚子大是常見的為腸胃吸收差體態，營養都堆在肚子變成廢物，沒去到四肢細胞。',
+  'body_flabby': '肉鬆鬆軟軟代表「脾胃氣血」不足以支撐肌肉生長，這是吸收轉化率低的警訊。',
   'sleep_drool': '睡覺流口水或磨牙，在中醫看來是脾胃不安穩，夜間生長激素分泌會受干擾。',
-  
+
   // 觀察「飲食反應」
-  'eat_bloating': '吃完就脹氣代表消化酶活性不足，營養在肚子裡發酵而不是被利用。',
-  'eat_notgrowing': '「胃強脾弱」最可惜，孩子吃很多但脾臟轉化不出來，營養都白費了。'
+  'eat_bloating': '吃完就脹氣代表消化不良，營養在肚子裡發酵而不是被利用。',
+  'eat_notgrowing': '「胃強脾弱」最可惜，孩子吃很多但細胞無法吸收，營養都白費了。'
 };
 
 /**
@@ -40,7 +40,7 @@ export const getMartinAdvice = async (selectedIds: string[]): Promise<string> =>
   // 根據勾選項選取前 2 個最具代表性的點進行分析，避免文字過長
   const representativeIds = selectedIds.slice(0, 2);
   const insights = representativeIds.map(id => ADVICE_MAPPING[id]).filter(Boolean);
-  
+
   let baseAdvice = "";
   const count = selectedIds.length;
 

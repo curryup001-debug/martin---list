@@ -72,7 +72,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
               className="group relative flex flex-col items-center justify-center w-full py-6 px-4 bg-[#F97316] hover:bg-[#EA580C] text-white rounded-2xl font-black transition-all hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-5px_rgba(249,115,22,0.4)] overflow-hidden"
             >
               <span className="text-sm md:text-base font-medium mb-1 opacity-95">馬丁藥師會在講座中，教你怎麼調整</span>
-              <span className="text-sm md:text-base font-bold text-[#FFD700] mb-3 animate-pulse">📢 再偷偷告訴你：講座還有 驚喜小禮物🎁</span>
+              <span className="text-sm md:text-base font-bold text-[#FFD700] mb-3 animate-pulse">📢 再偷偷告訴你：講座還有驚喜小禮物🎁</span>
 
               <div className="flex items-center gap-2 whitespace-nowrap">
                 <svg className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
