@@ -77,14 +77,14 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
               className="group relative flex flex-col items-center justify-center w-full py-6 px-4 bg-[#F97316] hover:bg-[#EA580C] text-white rounded-2xl font-black transition-all hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-5px_rgba(249,115,22,0.4)] overflow-hidden"
             >
               <span className="text-sm md:text-base font-medium mb-1 opacity-95">馬丁藥師會在講座中，教你怎麼調整</span>
-              <span className="text-sm md:text-base font-bold text-[#FFD700] mb-3 animate-pulse">📢 再偷偷告訴你：講座還有驚喜小禮物🎁</span>
+              <span className="text-sm md:text-base font-bold text-black mb-3 animate-pulse">📢 再偷偷告訴你：講座還有驚喜小禮物🎁</span>
 
               <div className="flex items-center gap-2 whitespace-nowrap">
                 <svg className="w-6 h-6 md:w-8 md:h-8 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z" />
                 </svg>
                 <span className="text-lg md:text-2xl tracking-tight">
-                  👉 點我進社群，講座當天直接提醒你
+                  👉 點我進社群，進群密碼：Martin66
                 </span>
               </div>
               {/* Shine effect */}
@@ -92,7 +92,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
             </a>
 
             <p className="text-slate-400 text-sm font-medium">
-              *直播名額有限，建議家長儘早卡位。
+              講座開播前提醒你
             </p>
 
             <button
