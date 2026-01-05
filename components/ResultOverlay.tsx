@@ -92,7 +92,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
             </a>
 
             <p className="text-slate-400 text-sm font-medium">
-              講座開播前提醒你
+              *講座開播前提醒你*
             </p>
 
             <button
