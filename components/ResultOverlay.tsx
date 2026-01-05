@@ -17,7 +17,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
       <div className="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300 max-h-[85vh] overflow-y-auto">
         {/* Status Header */}
         {/* Status Header - Clean Style */}
-        <div className={`p-6 md:p-10 text-center shrink-0 animate-slide-up-fade relative overflow-hidden`} style={{ animationDelay: '0.1s' }}>
+        <div className={`p-5 md:p-10 text-center shrink-0 animate-slide-up-fade relative overflow-hidden`} style={{ animationDelay: '0.1s' }}>
           {/* Top colored line */}
           <div className={`absolute top-0 left-0 right-0 h-3 ${isConcerned ? 'bg-gradient-to-r from-red-400 to-orange-400' : 'bg-gradient-to-r from-emerald-400 to-teal-400'}`}></div>
 
@@ -35,14 +35,14 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
           </p>
         </div>
 
-        <div className="p-8 md:p-12">
+        <div className="p-5 md:p-12">
           {/* Main Title */}
           <div className="text-center mb-8 animate-slide-up-fade" style={{ animationDelay: '0.2s' }}>
             <p className="text-2xl font-bold text-slate-700">
               您的孩子很有可能是
             </p>
             <h4 className={`text-2xl md:text-4xl font-black mt-2 mb-2 ${isConcerned ? 'text-[#EF4444]' : 'text-[#10B981]'}`}>
-              {isConcerned ? '「脾胃吸收力卡關」' : '「吸收力尚算穩定」'} <span className="text-slate-700 text-2xl font-bold">的狀態！</span>
+              {isConcerned ? '「脾胃吸收力卡關」' : '「吸收力尚算穩定」'} <span className="text-slate-700 text-2xl font-bold whitespace-nowrap">的狀態！</span>
             </h4>
           </div>
 
@@ -77,7 +77,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
               className="group relative flex flex-col items-center justify-center w-full py-6 px-4 bg-[#F97316] hover:bg-[#EA580C] text-white rounded-2xl font-black transition-all hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_-5px_rgba(249,115,22,0.4)] overflow-hidden"
             >
               <span className="text-sm md:text-base font-medium mb-1 opacity-95">馬丁藥師會在講座中，教你怎麼調整</span>
-              <span className="text-sm md:text-base font-bold text-black mb-3 animate-pulse">📢 再偷偷告訴你：講座還有驚喜小禮物🎁</span>
+              <span className="text-sm md:text-base font-bold text-black mb-3 animate-pulse">📢 再偷偷告訴你：講座還有<span className="whitespace-nowrap">驚喜小禮物🎁</span></span>
 
               <div className="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-2 w-full">
                 <div className="flex items-center gap-2">
@@ -89,7 +89,7 @@ const ResultOverlay: React.FC<Props> = ({ count, advice, loading, onClose }) => 
                   </span>
                 </div>
                 <span className="text-lg md:text-2xl tracking-tight font-bold whitespace-nowrap">
-                  ，進群密碼：Martin66
+                  <span className="hidden md:inline">，</span>進群密碼：Martin66
                 </span>
               </div>
               {/* Shine effect */}
